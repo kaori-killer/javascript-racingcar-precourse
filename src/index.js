@@ -1,34 +1,23 @@
+import { MoveCar } from "./MoveCar.js";
+import { MakeResult } from "MakeResult.js";
+import { printReault } from "./printReault.js";
+
 function Car(name, num) {
   let carList = {}
   for(let i = 0; i < name.length; i++){
     carList[name[i]] = '';
   }
 
+  let result = "📄 실행 결과";
   for(let i = 0; i < num; i++){
     carList = MoveCar(carList, name);
-    printNow(carList);  
+    result += MakeResult(carList, result);  
   }
 
-//  console.log(carList);
-  printReault(carList);
+  printResult(carList, result);
 }
 
-function MoveCar(carList, name){
-  for(let i = 0; i < name.length; i++){
-      const RANDOM_NUM = MissionUtils.Random.pickNumberInRange(1, 9);
-      if (RANDOM_NUM < 4){
-        continue;
-      }
-      carList[name[i]] += '-'
-  }
-  return carList
-}
-
-function printNow(){
-
-}
-
-function printReault(){
+function printWinners(){
   
 }
 
