@@ -1,4 +1,5 @@
 import { Car } from "./Car.js";
+import { IsValidInput } from "./IsValidInput.js";
 
 const carNamesForm = document.querySelector("#car-names-form");
 const carNamesInput = document.querySelector("#car-names-input");
@@ -8,7 +9,8 @@ let carNamesList = [];
 
 function carNamesBtnSubmit(event){
   event.preventDefault();
-  carNamesList = carNamesInput.value.split(",");
+  const carNamesInputValue = carNamesInput.value;
+  carNamesList = IsValidInput(carNamesInput.value) ? carNamesInputValue.split(",") : carNamesInput.value = null;
 }
 
 function racingCountBtnSubmit(event){

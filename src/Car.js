@@ -13,7 +13,7 @@ export function Car(carNamesList, num) {
     }
 }
 
-    let roadStatusResult = "";
+    let roadStatusResult = "📄 실행 결과\n\n";
     for(let i = 0; i < num; i++){
     carInfoList = MoveCar(carInfoList, carNamesList);
     roadStatusResult += MakeRoadStatus(carInfoList);  
