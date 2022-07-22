@@ -17,7 +17,7 @@ function Car(name, num) {
     carList = MoveCar(carList, name);
     roadStatusresult += MakeRoadStatus(carList);  
   }
-  printRoadStatus(carList, result);
+  printRoadStatus(carList, roadStatusresult);
   const WinnerList = MakeWinners(carList);
   PrintWinners(WinnerList);
 }
