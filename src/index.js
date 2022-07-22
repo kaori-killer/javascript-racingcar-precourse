@@ -1,25 +1,21 @@
-import { MoveCar } from "./MoveCar.js";
-import { MakeRoadStatus } from "./MakeRoadStatus.js";
-import { printRoadStatus } from "./printRoadStatus.js";
-import { MakeWinners } from "./MakeWinners.js";
-import { PrintWinners } from "./PrintWinners.js";
+import { Car } from "./Car.js";
 
-function Car(name, num) {
-  let carList = {}
-  for(let i = 0; i < name.length; i++){
-    carList[name[i]] = { 
-      roadStatus: '',
-      roadCount: 0,
-    }
-  }
-  let roadStatusresult = "";
-  for(let i = 0; i < num; i++){
-    carList = MoveCar(carList, name);
-    roadStatusresult += MakeRoadStatus(carList);  
-  }
-  printRoadStatus(carList, roadStatusresult);
-  const WinnerList = MakeWinners(carList);
-  PrintWinners(WinnerList);
+const carNamesForm = document.querySelector("#car-names-form");
+const carNamesInput = document.querySelector("#car-names-input");
+const racingCountForm = document.querySelector("#racing-count-form");
+const racingCountInput = document.querySelector("#racing-count-input");
+let carNamesList = [];
+
+function carNamesBtnSubmit(event){
+  event.preventDefault();
+  carNamesList = carNamesInput.value.split(",");
 }
 
-Car(['A', 'B', 'C', 'D', 'E'], 5);
+function racingCountBtnSubmit(event){
+  event.preventDefault();
+  const racingCount = parseInt(racingCountInput.value);
+  Car(carNamesList, racingCount);
+}
+
+carNamesForm.addEventListener("submit", carNamesBtnSubmit);
+racingCountForm.addEventListener("submit", racingCountBtnSubmit)

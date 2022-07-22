@@ -1,8 +1,8 @@
-export function MakeWinners(carList){
+export function MakeWinners(carInfoList){
     let maxCount = 0;
     let winners = [];
-    for(const key in carList){
-        const nowCount = carList[key]['roadCount'];
+    for(const key in carInfoList){
+        const nowCount = carInfoList[key]['roadCount'];
         if(maxCount == nowCount){
             winners.push(key);
         }
@@ -11,6 +11,5 @@ export function MakeWinners(carList){
             winners = [key];
         }
     }
-    console.log(winners);
     return winners;
 }   
