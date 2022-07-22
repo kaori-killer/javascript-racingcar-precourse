@@ -1,7 +1,9 @@
-export function MakeRoadStatus(carInfoList){
+function MakeRoadStatus(carInfoList){
     let roadStatusResult = ''
     for(const key in carInfoList){
         roadStatusResult += `${key}: ${carInfoList[key]['roadStatus']}\n`;
     }
     return roadStatusResult + "\n";
 }
+
+export default MakeRoadStatus;

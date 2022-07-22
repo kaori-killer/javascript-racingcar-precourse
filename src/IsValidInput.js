@@ -1,4 +1,4 @@
-export function IsValidInput(carNamesInputValue){
+function IsValidInput(carNamesInputValue){
     const carNamesList = carNamesInputValue.split(",");
     let isValid = true;
 
@@ -11,3 +11,5 @@ export function IsValidInput(carNamesInputValue){
     }
     return isValid;
 }
+
+export default IsValidInput;

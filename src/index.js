@@ -1,5 +1,5 @@
-import { Car } from "./Car.js";
-import { IsValidInput } from "./IsValidInput.js";
+import Car from "./Car.js";
+import IsValidInput from "./IsValidInput.js";
 
 const carNamesForm = document.querySelector("#car-names-form");
 const carNamesInput = document.querySelector("#car-names-input");
