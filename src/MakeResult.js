@@ -1,6 +1,7 @@
-export function MakeResult(carList, result){
+export function MakeResult(carList){
+    let result = ''
     for(const KEY in carList){
-        result += KEY + ":" + carList[KEY];
+        result += `${KEY}: ${carList[KEY]['roadStatus']}\n`;
     }
-    return result;
+    return result + "\n";
 }

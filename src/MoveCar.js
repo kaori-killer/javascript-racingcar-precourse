@@ -4,7 +4,8 @@ export function MoveCar(carList, name){
         if (RANDOM_NUM < 4){
           continue;
         }
-        carList[name[i]] += '-'
-    }
+        carList[name[i]]['roadStatus'] += '-'
+        carList[name[i]]['count'] += 1
+      }
     return carList
   }
