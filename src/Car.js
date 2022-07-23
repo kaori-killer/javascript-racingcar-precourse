@@ -1,8 +1,7 @@
 import MoveCar from "./MoveCar.js";
 import MakeRoadStatus from "./MakeRoadStatus.js";
-import printRoadStatus from "./printRoadStatus.js";
-import MakeWinners from "./MakeWinners.js";
-import PrintWinners from "./PrintWinners.js";
+import FindWinners from "./FindWinners.js";
+import printResult from "./printResult.js";
 
 function Car(carNamesList, num) {
     let carInfoList = {}
@@ -18,9 +17,8 @@ function Car(carNamesList, num) {
         carInfoList = MoveCar(carInfoList, carNamesList);
         roadStatusResult += MakeRoadStatus(carInfoList);  
     }
-    printRoadStatus(roadStatusResult);
-    const WinnerList = MakeWinners(carInfoList);
-    PrintWinners(WinnerList);
+    const winnerList = FindWinners(carInfoList);
+    printResult(roadStatusResult, winnerList);
 }
 
 export default Car;

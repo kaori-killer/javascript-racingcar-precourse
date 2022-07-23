@@ -1,4 +1,4 @@
-function MakeWinners(carInfoList){
+function FindWinners(carInfoList){
     let maxCount = 0;
     let winners = [];
     for(const key in carInfoList){
@@ -14,4 +14,4 @@ function MakeWinners(carInfoList){
     return winners;
 }   
 
-export default MakeWinners;
+export default FindWinners;
